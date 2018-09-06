@@ -48,7 +48,7 @@ namespace AzureB2BInvite
                 invitation.InvitedUserDisplayName = displayName;
                 invitation.InvitedUserEmailAddress = request.EmailAddress;
                 invitation.InviteRedirectUrl = profileUrl;
-                invitation.SendInvitationMessage = (!Settings.UseSMTP);
+                invitation.SendInvitationMessage = true; //(!Settings.UseSMTP);
                 invitation.InvitedUserType = memberType.ToString();
 
                 if (useCustomEmailTemplate && invitation.SendInvitationMessage && domainSettings.InviteTemplateContent.TemplateContent!=null)
