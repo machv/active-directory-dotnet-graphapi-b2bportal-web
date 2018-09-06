@@ -73,16 +73,16 @@ namespace AzureB2BInvite
                     {
                         var groupsAdded = AddUserToGroup(responseData.InvitedUser.Id, domainSettings.Groups);
                         //todo: log or notify re the negative
-                    }
+            	    }
                 }
 
-                if (Settings.UseSMTP)
-                {
-                    var emailSubject = Settings.InvitationEmailSubject.Replace("{{orgname}}", Settings.InvitingOrganization);
+                //if (Settings.UseSMTP)
+                //{
+                //    var emailSubject = Settings.InvitationEmailSubject.Replace("{{orgname}}", Settings.InvitingOrganization);
 
-                    string body = FormatEmailBody(responseData, redemptionSettings, inviteTemplate);
-                    SendViaSMTP(emailSubject, body, invitation.InvitedUserEmailAddress);
-                }
+//                    string body = FormatEmailBody(responseData, redemptionSettings, inviteTemplate);
+//                    SendViaSMTP(emailSubject, body, invitation.InvitedUserEmailAddress);
+        //    }
 
                 return responseData.Status;
             }
